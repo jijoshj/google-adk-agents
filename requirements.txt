@@ -1,0 +1,6 @@
+langchain-community==0.3.28
+wikipedia==1.4.0
+pandas==2.2.3
+litellm==1.76.0
+python-dotenv==1.0.1
+requests>=2.32.5
