@@ -1,3 +1,5 @@
+google-adk
+google-generativeai
 langchain-community==0.3.28
 wikipedia==1.4.0
 pandas==2.2.3
