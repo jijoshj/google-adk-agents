@@ -2,15 +2,16 @@ import os
 import subprocess
 from dotenv import load_dotenv
 from google.adk.agents import Agent
+from google.adk.models.lite_llm import LiteLlm
 
 load_dotenv()
 
 # --- Model Configuration ---
-# Option 1: Google Gemini (active)
+# Option 1: Google Gemini (uncomment to use)
 # MODEL = os.getenv("MODEL1", "gemini-2.5-flash")
 
-# Option 2: Anthropic Claude (uncomment to use)
-MODEL = os.getenv("MODEL2", "claude-sonnet-4-5-20251001")
+# Option 2: Anthropic Claude via LiteLLM (active)
+MODEL = LiteLlm(model=os.getenv("MODEL2", "anthropic/claude-sonnet-4-6"))
 
 # Path to the AIAgents project
 REPO_PATH = "/Users/jijoshjoshua/Desktop/AIAgents"
