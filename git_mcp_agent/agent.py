@@ -9,10 +9,11 @@ load_dotenv()
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 NPX_PATH = "/Users/jijoshjoshua/.nvm/versions/node/v24.14.0/bin/npx"
+MODEL = os.getenv("MODEL2", "claude-sonnet-4-5-20251001")
 
 root_agent = Agent(
     name="git_mcp_agent",
-    model="gemini-2.5-flash",
+    model=MODEL,
     description="An agent that reads GitHub repositories using the GitHub MCP server.",
     instruction=f"""
     You are a GitHub repository reader and analyser.

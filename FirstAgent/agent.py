@@ -1,6 +1,8 @@
 from google.adk.agents import Agent
 from google.adk.tools import google_search
 
+MODEL = os.getenv("MODEL2", "claude-sonnet-4-5-20251001")
+
 def morning_greet(name:str) -> str:
     return f"Good Morning {name}"
 
@@ -9,7 +11,7 @@ def evening_greet(name:str) -> str:
 
 root_agent = Agent(
     name="google_search_agent",
-    model="gemini-2.5-flash",
+    model=MODEL,
     tools=[morning_greet, evening_greet],
     instruction="""
 

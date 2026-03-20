@@ -11,6 +11,8 @@ GITHUB_USERNAME = os.getenv("GITHUB_USERNAME", "<YOUR_GITHUB_USERNAME>")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "<YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>")
 GITHUB_API_URL = "https://api.github.com"
 
+MODEL = os.getenv("MODEL2", "claude-sonnet-4-5-20251001")
+
 def create_github_repo(repo_name: str, description: str = "", private: bool = False) -> str:
     """Creates a new GitHub repository for the authenticated user.
     Args:
@@ -57,7 +59,7 @@ def delete_github_repo(repo_name: str) -> str:
 
 root_agent = Agent(
     name="github_manager_agent",
-    model="gemini-2.5-flash",
+    model=MODEL,
     description="An agent that manages a user's GitHub repositories.",
     tools=[create_github_repo, delete_github_repo],
     instruction='''

@@ -13,9 +13,11 @@ wikipedia_tool = LangchainTool(
     tool=WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
 )
 
+MODEL = os.getenv("MODEL2", "claude-sonnet-4-5-20251001")
+
 root_agent = Agent(
     name="langchain_tool_agent",
-    model=os.getenv("MODEL_NAME", "gemini-2.5-flash"),
+    model=MODEL,
     instruction="""You are a helpful assistant. 
     Research the topic suggested by the user using Wikipedia and 
     answer the question.""",
